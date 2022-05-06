@@ -1,6 +1,6 @@
 package exerc4
 
-class Circulo(val raio: Int) : FormaGeometrica {
+class Circulo(private val raio: Int) : FormaGeometrica {
 
     override fun calcularArea(): Double {
         println("O tamanho da área do Circulo de raio $raio é:")

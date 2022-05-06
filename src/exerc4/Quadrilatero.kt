@@ -7,10 +7,10 @@ abstract class Quadrilatero(
     lado4: Int
 ) : FormaGeometrica {
 
-    var base = lado1
-    var altura = lado2
-    val lado3 = lado3
-    val lado4 = lado4
+    protected var base = lado1
+    protected var altura = lado2
+    private val lado3 = lado3
+    private val lado4 = lado4
 
     override fun calcularPerimetro(): Double {
         println("O perímetro da forma é ")

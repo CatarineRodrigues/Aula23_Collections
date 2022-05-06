@@ -33,7 +33,7 @@ fun main() {
         i++
     }
     listaFormas.forEach {
-        println(it.calcularPerimetro())
         println(it.calcularArea())
+        println(it.calcularPerimetro())
     }
 }

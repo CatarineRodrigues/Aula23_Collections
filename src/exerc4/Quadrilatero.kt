@@ -13,7 +13,7 @@ abstract class Quadrilatero(
     private val lado4 = lado4
 
     override fun calcularPerimetro(): Double {
-        println("O perímetro da forma é ")
+        println("O perímetro do quadrilátero é ")
         return base + altura + lado3 + lado4 + 0.0
     }
 }

@@ -15,3 +15,4 @@ fun main() {
     println(lista)
 }
 
+//A diferença é que o Set não permite adicionar valores repetidos

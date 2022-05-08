@@ -12,5 +12,3 @@ class Retangulo(
         return base * altura * 1.0
     }
 }
-/*● Classes para representar retângulos e quadrados. A primeira deve receber o tamanho da base e da
-altura no construtor, enquanto a segunda deve receber apenas o tamanho do lado;*/

@@ -32,8 +32,12 @@ fun main() {
         }
         i++
     }
+
     listaFormas.forEach {
+        it.exibirDados()
         println(it.calcularArea())
         println(it.calcularPerimetro())
+        println("-------------------------")
     }
+
 }

@@ -1,43 +1,39 @@
 package exerc3
 
-/*○ Criar o método guardarPecas(listaDePeca: ArrayList<Peca>): Int na Classe GuardaVolumes, que
-recebe uma lista de peças adiciona essa lista de peças em nosso dicionário e retorna o número de
-identificação,ou seja, a chave do dicionário onde guardamos as peças, que neste caso é o nosso contador
-
-○ Criar o método mostrarPecas() na Classe GuardaVolumes, que imprime na tela todas as peças que
-estão no guarda-volumes, junto com o número correspondente
-○ Criar o método mostrarPecas(numero: Int) na classe GuardaVolumes, que imprima as peças que estão
-associadas ao número recebido
-○ Criar o método devolverPecas(numero: Int) na Classe GuardaVolumes, que remova a lista de peças
-que esta associada ao número recebido.*/
-
-class GuardaVolumes(override val marca: String, override val modelo: String) : Peca() {
+class GuardaVolumes {
 
     var contador: Int = 0
     val dicionario = mutableMapOf<Int, ArrayList<Peca>>()
 
-    fun guardaPecas(listaDePeca: ArrayList<Peca>): Int{
+    fun guardarPecas(listaDePeca: ArrayList<Peca>): Int {
         contador++
         dicionario[contador] = (listaDePeca)
         return contador
     }
-    fun mostrarPecas(){
+
+    fun mostrarPecas() {
+
+        println("Verificar peças salvas")
         dicionario.forEach { chave, valor ->
-            println("A  $chave corresponde aos itens $valor")
+            println("A chave $chave corresponde aos itens")
+            valor.forEach {
+                println("Marca ${it.marca} e modelo ${it.modelo}")
+            }
         }
     }
 
-    fun mostrarPecas(chave: Int){
+    fun mostrarPecas(chave: Int) {
         dicionario[chave]!!.forEach { _ ->
             println(dicionario[chave])
         }
     }
 
+    fun devolverPecas(numero: Int) {
+        println("----------------------")
 
-
-    override fun retirada(numero: Int) {
         println("Foi removida a peça de número $numero")
         dicionario.remove(numero)
+        println("----------------------")
     }
 
 }

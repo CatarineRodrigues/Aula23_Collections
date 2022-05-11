@@ -1,5 +1,6 @@
 package exerc3
 
 fun main() {
-    Menu().redirecionamentoDoMenu()
+    val menu = Menu()
+    menu.redirecionamentoDoMenu()
 }

@@ -1,5 +1,7 @@
 package exerc3
 
+import kotlin.system.exitProcess
+
 class GuardaVolumes {
 
     var contador: Int = 0
@@ -28,12 +30,35 @@ class GuardaVolumes {
         }
     }
 
-    fun devolverPecas(numero: Int) {
-        println("----------------------")
+    fun devolverPecas() {
+        try {
+            println("Digite o código da peça que deseja remover")
+            val numero = readln().toInt()
+            println("----------------------")
+            println("Foi removida a peça de número $numero")
+            dicionario.remove(numero)
+            println("----------------------")
 
-        println("Foi removida a peça de número $numero")
-        dicionario.remove(numero)
-        println("----------------------")
+        } catch (exception: Exception) {
+            println("Causa: ${exception.cause}")
+            println("Mensagem: ${exception.message}")
+            println("Para sair aperte '1', para voltar pressione qualquer tecla")
+            when (readln()) {
+                "1" -> {
+                    println("Obrigado por usar nosso sistema!")
+                    exitProcess(0)
+                }
+                else -> println("Retornando ao Menu Principal")
+            }
+        }
     }
 
+    fun guardarPecas(subMenu: String) {
+        when (subMenu) {
+            "1" -> Roupa().criarRoupaNova()
+            "2" -> Acessorio().criarAcessorioNovo()
+        }
+    }
 }
+
+/*} */
